@@ -1,0 +1,12 @@
+/*
+ * a/a2.css
+ */
+
+.a2 {
+	padding: 50px;
+	background: #f00;
+	opacity: .5;
+	border-radius: 50%;
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+	transform: rotate(10deg);
+}

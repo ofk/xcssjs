@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title>XCSS Sample 1</title>
+<link rel="stylesheet" href="a/a1.css" media="all" />
+<style type="text/css"><!--
+@import './b/b2.css';
+--></style>
+<script src="../xcss.js"></script>
+<script>
+xcss.properties['-test-color'] = 'color';
+xcss.properties['-test-border'] = function () { return 'border'; };
+xcss.properties['-test-margin-padding'] = function (val) { return { margin: val, padding: val }; };
+xcss.values['-test-solid'] = 'solid';
+xcss.values['test-value'] = function (p) { return p === 'text-decoration' ? 'underline' : '500%'; };
+xcss.functions['-test-rgb'] = 'rgb';
+xcss.functions['-test-colorcode'] = function (r, g, b) { return '#' + r + g + b; };
+xcss.run();
+</script>
+</head>
+<body>
+<div class="a1">a1</div>
+<div class="a2">a2</div>
+<div class="b1">b1</div>
+<div class="b2">b2</div>
+<div class="b2-test">b2-test</div>
+</body>
+</html>

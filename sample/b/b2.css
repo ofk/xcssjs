@@ -1,0 +1,29 @@
+/*
+ * b/b2.css
+ */
+
+/*
+properties['-test-color'] = 'color';
+properties['-test-border'] = function () { return 'border'; };
+properties['-test-margin-padding'] = function (val) { return { margin: val, padding: val }; };
+values['-test-solid'] = 'solid';
+values['test-value'] = function (p) { return p === 'text-decoration' ? 'underline' : '500%'; };
+funcs['-test-rgb'] = 'rgb';
+funcs['-test-colorcode'] = function (r, g, b) { return '#' + r + g + b; };
+*/
+
+.b2 {
+	-test-color: -test-colorcode(f,0,0); /* color: #f00; */
+	-test-border: 1px -test-solid -test-rgb(0,0,0); /* border: 1px solid rgb(0,0,0); */
+	-test-margin-padding: 10px; /* margin: 10px; padding: 10px; */
+	text-decoration: test-value; /* text-decoration: underline; */
+	font-size: test-value; /* font-size: 500%; */
+}
+
+.b2-test {
+	color: #f00;
+	border: 1px solid rgb(0,0,0);
+	margin: 10px; padding: 10px;
+	text-decoration: underline;
+	font-size: 500%;
+}

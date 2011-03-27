@@ -1,0 +1,20 @@
+/*
+ * a/a1.css
+ */
+@import url('a2.css');
+@import url(../b/b1.css);
+
+.a1 {
+	border-width: 10px 20em 30pt 40ex;
+	border-style: solid;
+	border-color: #123 #456789 rgb(1, 23, 45) rgb(98%, 76%, 54%);
+	font-size: 12.34%;
+	font-family: "Lucida Sans Unicode", 'Lucida Grande', sans-serif;
+	color: red !important;
+	background: black;
+	test: gold;
+}
+
+#a1>a[class~='a1']:first-child::after {
+	content: "(" attr(class) ")";
+}
