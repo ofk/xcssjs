@@ -799,8 +799,8 @@ function range(num, min, max) {
 	return Math.min(Math.max(min, num), max);
 }
 
-// boolean venderProperty(name:string, flag:boolean = false)
-function venderProperty(name, flag) {
+// boolean vendorProperty(name:string, flag:boolean = false)
+function vendorProperty(name, flag) {
 	// 実装済み
 	if (divStyle[xcss.rules.camelize(name)] !== void 0) {
 		return true;
@@ -817,8 +817,8 @@ function venderProperty(name, flag) {
 	return false;
 }
 
-// boolean venderValueBase(target:object, name:string, value:string, args:string, flag:boolean = false)
-function venderValueBase(target, name, value, args, flag) {
+// boolean vendorValueBase(target:object, name:string, value:string, args:string, flag:boolean = false)
+function vendorValueBase(target, name, value, args, flag) {
 	var camelize_name = xcss.rules.camelize(name);
 	// 値の設定
 	try {
@@ -844,136 +844,136 @@ function venderValueBase(target, name, value, args, flag) {
 	return false;
 }
 
-// boolean venderValue(name:string, value:string, flag:boolean = false)
-function venderValue(name, value, flag) {
-	return venderValueBase(values, name, value, '', flag);
+// boolean vendorValue(name:string, value:string, flag:boolean = false)
+function vendorValue(name, value, flag) {
+	return vendorValueBase(values, name, value, '', flag);
 }
 
-// boolean venderFunction(name:string, func:string, args:string, flag:boolean = false)
-function venderFunction(name, func, args, flag) {
-	return venderValueBase(funcs, name, func, '(' + args + ')', flag);
+// boolean vendorFunction(name:string, func:string, args:string, flag:boolean = false)
+function vendorFunction(name, func, args, flag) {
+	return vendorValueBase(funcs, name, func, '(' + args + ')', flag);
 }
 
 //= multi-column
-venderProperty('column-count');
-venderProperty('column-gap');
-venderProperty('column-rule');
-venderProperty('column-rule-color');
-venderProperty('column-rule-style');
-venderProperty('column-rule-width');
-venderProperty('column-span');
-venderProperty('column-width');
-venderProperty('columns');
-venderProperty('float-offset');
+vendorProperty('column-count');
+vendorProperty('column-gap');
+vendorProperty('column-rule');
+vendorProperty('column-rule-color');
+vendorProperty('column-rule-style');
+vendorProperty('column-rule-width');
+vendorProperty('column-span');
+vendorProperty('column-width');
+vendorProperty('columns');
+vendorProperty('float-offset');
 
 //= animation
 // @keyframesは未対応
-venderProperty('animation');
-venderProperty('animation-delay');
-venderProperty('animation-direction');
-venderProperty('animation-duration');
-venderProperty('animation-iteration-count');
-venderProperty('animation-name');
-venderProperty('animation-play-state');
-venderProperty('animation-timing-function');
+vendorProperty('animation');
+vendorProperty('animation-delay');
+vendorProperty('animation-direction');
+vendorProperty('animation-duration');
+vendorProperty('animation-iteration-count');
+vendorProperty('animation-name');
+vendorProperty('animation-play-state');
+vendorProperty('animation-timing-function');
 
 //= grid
-venderProperty('grid-columns');
-venderProperty('grid-rows');
+vendorProperty('grid-columns');
+vendorProperty('grid-rows');
 
 //= text
-venderProperty('hanging-punctuation');
-venderProperty('line-break');
-venderProperty('punctuation-trim');
-venderProperty('text-align-last');
-venderProperty('text-autospace');
-venderProperty('text-decoration');
-venderProperty('text-decoration-color');
-venderProperty('text-decoration-line');
-venderProperty('text-decoration-skip');
-venderProperty('text-decoration-style');
-venderProperty('text-emphasis');
-venderProperty('text-emphasis-color');
-venderProperty('text-emphasis-position');
-venderProperty('text-emphasis-style');
-venderProperty('text-justify');
-venderProperty('text-outline');
-venderProperty('text-shadow');
-venderProperty('text-underline-position');
-venderProperty('white-space-collapsing');
-venderProperty('word-break');
-venderProperty('word-wrap');
+vendorProperty('hanging-punctuation');
+vendorProperty('line-break');
+vendorProperty('punctuation-trim');
+vendorProperty('text-align-last');
+vendorProperty('text-autospace');
+vendorProperty('text-decoration');
+vendorProperty('text-decoration-color');
+vendorProperty('text-decoration-line');
+vendorProperty('text-decoration-skip');
+vendorProperty('text-decoration-style');
+vendorProperty('text-emphasis');
+vendorProperty('text-emphasis-color');
+vendorProperty('text-emphasis-position');
+vendorProperty('text-emphasis-style');
+vendorProperty('text-justify');
+vendorProperty('text-outline');
+vendorProperty('text-shadow');
+vendorProperty('text-underline-position');
+vendorProperty('white-space-collapsing');
+vendorProperty('word-break');
+vendorProperty('word-wrap');
 
 //= hyperlink
-venderProperty('target');
-venderProperty('target-name');
-venderProperty('target-new');
-venderProperty('target-position');
+vendorProperty('target');
+vendorProperty('target-name');
+vendorProperty('target-new');
+vendorProperty('target-position');
 
 //= border
-venderProperty('border-image');
-venderProperty('border-image-outset');
-venderProperty('border-image-repeat');
-venderProperty('border-image-slice');
-venderProperty('border-image-source');
-venderProperty('border-image-width');
-venderProperty('border-radius');
-if (!venderProperty('border-top-left-radius') && venderProperty(vendorPrefix + 'border-radius-topleft', true)) {
+vendorProperty('border-image');
+vendorProperty('border-image-outset');
+vendorProperty('border-image-repeat');
+vendorProperty('border-image-slice');
+vendorProperty('border-image-source');
+vendorProperty('border-image-width');
+vendorProperty('border-radius');
+if (!vendorProperty('border-top-left-radius') && vendorProperty(vendorPrefix + 'border-radius-topleft', true)) {
 	properties['border-top-left-radius'] = vendorPrefix + 'border-radius-topleft'
 }
-if (!venderProperty('border-top-right-radius') && venderProperty(vendorPrefix + 'border-radius-topright', true)) {
+if (!vendorProperty('border-top-right-radius') && vendorProperty(vendorPrefix + 'border-radius-topright', true)) {
 	properties['border-top-right-radius'] = vendorPrefix + 'border-radius-topright'
 }
-if (!venderProperty('border-bottom-left-radius') && venderProperty(vendorPrefix + 'border-radius-bottomleft', true)) {
+if (!vendorProperty('border-bottom-left-radius') && vendorProperty(vendorPrefix + 'border-radius-bottomleft', true)) {
 	properties['border-bottom-left-radius'] = vendorPrefix + 'border-radius-bottomleft'
 }
-if (!venderProperty('border-bottom-right-radius') && venderProperty(vendorPrefix + 'border-radius-bottomright', true)) {
+if (!vendorProperty('border-bottom-right-radius') && vendorProperty(vendorPrefix + 'border-radius-bottomright', true)) {
 	properties['border-bottom-right-radius'] = vendorPrefix + 'border-radius-bottomright'
 }
-venderProperty('box-align');
-venderProperty('box-decoration-break');
-venderProperty('box-direction');
-venderProperty('box-flex');
-venderProperty('box-lines');
-venderProperty('box-ordinal-group');
-venderProperty('box-orient');
-venderProperty('box-pack');
-venderProperty('box-shadow');
-venderProperty('rotation');
-venderProperty('rotation-point');
+vendorProperty('box-align');
+vendorProperty('box-decoration-break');
+vendorProperty('box-direction');
+vendorProperty('box-flex');
+vendorProperty('box-lines');
+vendorProperty('box-ordinal-group');
+vendorProperty('box-orient');
+vendorProperty('box-pack');
+vendorProperty('box-shadow');
+vendorProperty('rotation');
+vendorProperty('rotation-point');
 
 //= marquee
-// venderProperty('marquee-direction');
-// venderProperty('marquee-loop');
-// venderProperty('marquee-play-count');
-// venderProperty('marquee-speed');
-// venderProperty('marquee-style');
-// venderProperty('overflow-style');
+// vendorProperty('marquee-direction');
+// vendorProperty('marquee-loop');
+// vendorProperty('marquee-play-count');
+// vendorProperty('marquee-speed');
+// vendorProperty('marquee-style');
+// vendorProperty('overflow-style');
 // -webkit-marquee-repetition
 
 //= ui
-venderProperty('box-sizing');
-venderProperty('nav-index');
-venderProperty('nav-x');
-venderProperty('outline');
-venderProperty('outline-color');
-venderProperty('outline-offset');
-venderProperty('outline-style');
-venderProperty('outline-width');
-venderProperty('resize');
-venderProperty('text-overflow');
+vendorProperty('box-sizing');
+vendorProperty('nav-index');
+vendorProperty('nav-x');
+vendorProperty('outline');
+vendorProperty('outline-color');
+vendorProperty('outline-offset');
+vendorProperty('outline-style');
+vendorProperty('outline-width');
+vendorProperty('resize');
+vendorProperty('text-overflow');
 
 //= transform
-venderProperty('transform');
-venderProperty('transform-origin');
-venderProperty('transform-style');
+vendorProperty('transform');
+vendorProperty('transform-origin');
+vendorProperty('transform-style');
 
 //= background
-venderProperty('background-clip');
-venderProperty('background-origin');
-venderProperty('background-size');
-if (!venderProperty('opacity')) {
-	if (venderProperty('filter', true)) {
+vendorProperty('background-clip');
+vendorProperty('background-origin');
+vendorProperty('background-size');
+if (!vendorProperty('opacity')) {
+	if (vendorProperty('filter', true)) {
 		properties.opacity = function () {
 			if (this.values[0]) {
 				return {
@@ -986,15 +986,15 @@ if (!venderProperty('opacity')) {
 }
 
 //= transition
-venderProperty('transition');
-venderProperty('transition-delay');
-venderProperty('transition-duration');
-venderProperty('transition-property');
-venderProperty('transition-timing-function');
+vendorProperty('transition');
+vendorProperty('transition-delay');
+vendorProperty('transition-duration');
+vendorProperty('transition-property');
+vendorProperty('transition-timing-function');
 
 //= linear-gradient
-if (!venderFunction('background-image', 'linear-gradient', '#000 0%, #000 100%')) {
-	if (venderFunction('background-image', '-webkit-gradient', 'linear,left top,left bottom,color-stop(0,#000),color-stop(1,#000)', true)) {
+if (!vendorFunction('background-image', 'linear-gradient', '#000 0%, #000 100%')) {
+	if (vendorFunction('background-image', '-webkit-gradient', 'linear,left top,left bottom,color-stop(0,#000),color-stop(1,#000)', true)) {
 		xcss.functions['linear-gradient'] = function () {
 			var args = [ 'linear', 'left top', 'left bottom' ];
 			for (var i = 0, iz = arguments.length; i < iz; ++i) {
@@ -1005,7 +1005,7 @@ if (!venderFunction('background-image', 'linear-gradient', '#000 0%, #000 100%')
 			return '-webkit-gradient(' + args.join(',') + ')';
 		};
 	}
-	else if (window.atob && window.btoa && venderFunction('background-image', 'url', '"data:image/svg+xml;base64,' + btoa('<?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" version="1.0"><defs><linearGradient x1="0" y1="0" x2="0" y2="100%" id="gradient"><stop offset="0%" style="stop-color:rgba(255,255,255,0.5);"/><stop offset="100%" style="stop-color:rgba(255,255,255,0);"/></linearGradient></defs><rect x="0" y="0" fill="url(#gradient)" width="100%" height="100%"/></svg>') + '"', true)) {
+	else if (window.atob && window.btoa && vendorFunction('background-image', 'url', '"data:image/svg+xml;base64,' + btoa('<?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" version="1.0"><defs><linearGradient x1="0" y1="0" x2="0" y2="100%" id="gradient"><stop offset="0%" style="stop-color:rgba(255,255,255,0.5);"/><stop offset="100%" style="stop-color:rgba(255,255,255,0);"/></linearGradient></defs><rect x="0" y="0" fill="url(#gradient)" width="100%" height="100%"/></svg>') + '"', true)) {
 		xcss.functions['linear-gradient'] = function () {
 			var xml = '<?xml version="1.0"?><svg xmlns="http://www.w3.org/2000/svg" version="1.0"><defs><linearGradient x1="0" y1="0" x2="0" y2="100%" id="gradient">';
 			for (var i = 0, iz = arguments.length; i < iz; ++i) {
